@@ -13,6 +13,7 @@ jobs:
             - run:
                 name: tests
                 command: npm test
-            - deploy:
-                name: heroku
-                command: heroku/deploy-via-git
+            - workflows:
+                heroku_deploy:
+                  jobs:
+                    - heroku/deploy-via-git
