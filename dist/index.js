@@ -9,7 +9,7 @@ dotenv_1.default.config();
 const port = process.env.SERVER_PORT;
 const app = express_1.default();
 app.get("/", (req, res) => {
-    res.end('hi there!');
+    res.end('hi there everyone from London!');
 });
 app.listen(port, () => {
     // tslint:disable-next-line:no-console
