@@ -9,7 +9,7 @@ const port = process.env.SERVER_PORT;
 const app = express();
 
 app.get( "/", ( req, res ) => {
-    res.end('deployed to heroku')
+    res.end('deployed to heroku with love')
 });
 
 app.listen( port, () => {
