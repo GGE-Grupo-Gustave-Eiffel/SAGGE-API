@@ -8,17 +8,15 @@
     "lint": "tslint -c tslint.json -p tsconfig.json --fix",
     "tsc": "tsc",
     "dev:start": "npm-run-all build start",
-    "prestart": "npm run build ",
+    "heroku-postbuild": "npm-run-all clean lint tsc",
     "dev": "nodemon --watch src -e ts,js --exec npm run dev:start",
     "start": "node dist/index.js",
-    "build": "npm-run-all clean lint tsc",
     "test": "jest"
   },
   "author": "Luís Tchitue",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^10.0.0",
-    "npm-run-all": "^4.1.5",
     "express": "^4.17.1"
   },
   "engines": {
@@ -33,6 +31,7 @@
     "jest": "^27.0.6",
     "nodemon": "^2.0.12",
     "rimraf": "^3.0.2",
+    "npm-run-all": "^4.1.5",
     "shelljs": "^0.8.4",
     "ts-jest": "^27.0.4",
     "ts-node": "^10.2.0",
