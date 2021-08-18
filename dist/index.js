@@ -6,10 +6,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const dotenv_1 = __importDefault(require("dotenv"));
 const express_1 = __importDefault(require("express"));
 dotenv_1.default.config();
-const port = process.env.SERVER_PORT;
+const port = process.env.SERVER_PORT || 5000;
 const app = express_1.default();
 app.get("/", (req, res) => {
-    res.end('deployed to heroku with love');
+    res.end('deployed to heroku with love!');
 });
 app.listen(port, () => {
     // tslint:disable-next-line:no-console
