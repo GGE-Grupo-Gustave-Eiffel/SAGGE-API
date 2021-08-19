@@ -8,7 +8,7 @@ const express_1 = __importDefault(require("express"));
 const port = process.env.PORT || 5000;
 const app = express_1.default();
 app.get("/", (req, res) => {
-    res.end('deployed to heroku with love!');
+    res.end('deployed to heroku with love and husky - and its compiles before committing!');
 });
 app.listen(port, () => {
     // tslint:disable-next-line:no-console
