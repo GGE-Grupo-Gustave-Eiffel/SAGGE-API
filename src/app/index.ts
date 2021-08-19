@@ -2,14 +2,14 @@ import dotenv from "dotenv";
 import express from "express";
 import path from "path";
 
-dotenv.config();
+//dotenv.config();
 
-const port = process.env.SERVER_PORT;
+const port = process.env.PORT || 5000;
 
 const app = express();
 
 app.get( "/", ( req, res ) => {
-    res.end('hi there!')
+    res.end('deployed to heroku with love and husky - and its compiles before committing!')
 });
 
 app.listen( port, () => {

@@ -3,22 +3,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const dotenv_1 = __importDefault(require("dotenv"));
 const express_1 = __importDefault(require("express"));
-// initialize configuration
-dotenv_1.default.config();
-// port is now available to the Node.js runtime
-// as if it were an environment variable
-const port = process.env.SERVER_PORT;
+//dotenv.config();
+const port = process.env.PORT || 5000;
 const app = express_1.default();
-// Configure Express to use EJS
-// define a route handler for the default home page
 app.get("/", (req, res) => {
-    // render the index template
-    // tslint:disable-next-line:no-console
-    res.end('hi there!');
+    res.end('deployed to heroku with love and husky - and its compiles before committing!');
 });
-// start the express server
 app.listen(port, () => {
     // tslint:disable-next-line:no-console
     console.log(`server started at http://localhost:${port}`);
